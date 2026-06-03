@@ -30,7 +30,6 @@ function App() {
   const markerRefs = useRef({});
 
   useEffect(() => {
-    console.log("API Key:", process.env.REACT_APP_EBIRD_API_KEY);
     fetch(
       `https://api.ebird.org/v2/data/obs/geo/recent?lat=${LAT}&lng=${LNG}&dist=25&maxResults=50`,
       { headers: { "X-eBirdApiToken": API_KEY } }
@@ -54,7 +53,7 @@ function App() {
     .sort((a, b) => {
       if (sortBy === "name") return a.comName.localeCompare(b.comName);
       if (sortBy === "region") return a.comName.localeCompare(b.comName);
-      if (sortBy == "date") return new Date(b.obsDt) - new Date(a.obsDt);
+      if (sortBy === "date") return new Date(b.obsDt) - new Date(a.obsDt);
       return 0;
     })
 
