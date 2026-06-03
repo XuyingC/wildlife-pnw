@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD0OzG9Snix86rjf5qFUAHholr5Wqq1VWk",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "wildlife-pnw.firebaseapp.com",
   projectId: "wildlife-pnw",
   storageBucket: "wildlife-pnw.firebasestorage.app",
